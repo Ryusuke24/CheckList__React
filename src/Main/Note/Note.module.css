@@ -1,0 +1,30 @@
+.note {
+  display: flex;
+  width: 85%;
+  gap: 10px;
+  margin: 10px 5px 5px 5px;
+  padding: 0 5px 0 5px;
+  justify-content: flex-end;
+  border: 1px solid black;
+}
+
+.noteName {
+  flex: 1;
+  align-self: flex-start;
+}
+
+.lineThroughNoteName {
+  flex: 1;
+  align-self: flex-start;
+  text-decoration: line-through;
+}
+
+.noteDeleteBtn {
+  align-self: center;
+  height: 30px;
+}
+
+.noteDoneBtn {
+  height: 30px;
+  align-self: center;
+}

@@ -1,0 +1,28 @@
+.creationNote {
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.creationNoteInput {
+  margin-left: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.creationNoteButton {
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 50px;
+  border-radius: 8px;
+  border: none;
+}
+
+.creationNoteButton:hover {
+  color: whitesmoke;
+  background-color: rgb(29, 29, 29);
+}
