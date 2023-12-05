@@ -1,0 +1,6 @@
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  /* border: 1px solid black; */
+}
