@@ -1,25 +1,34 @@
 import React, { useState } from "react";
 import style from "./Note.module.css";
+import EditNote from "./EditNote/EditNote";
+import ReadNote from "./ReadNote/ReadNote";
 
-function Note({ index, id, name, isFinish, deleteNote }) {
-  const [isDone, setDone] = useState(isFinish);
+function Note({ index, id, name, isFinish, deleteNote, editNote }) {
+  const [isEdit, setEdit] = useState(false);
+
   return (
-    <div className={style.note} key={id}>
-      <h2 className={isDone ? style.lineThroughNoteName : style.noteName}>
-        {name}
-      </h2>
-      <button className={style.noteDoneBtn} onClick={() => setDone(!isDone)}>
-        {isDone ? "Not ready" : "Done!"}
-      </button>
-      <button
-        className={style.noteDeleteBtn}
-        onClick={() => {
-          deleteNote(index);
-        }}
-      >
-        deleteNote
-      </button>
-    </div>
+    <>
+      {isEdit ? (
+        <EditNote
+          id={id}
+          editNote={editNote}
+          isEdit={isEdit}
+          setEdit={setEdit}
+          name={name}
+        />
+      ) : (
+        <ReadNote
+          index={index}
+          id={id}
+          name={name}
+          isFinish={isFinish}
+          deleteNote={deleteNote}
+          editNote={editNote}
+          isEdit={isEdit}
+          setEdit={setEdit}
+        />
+      )}
+    </>
   );
 }
 

@@ -32,6 +32,20 @@ function Main() {
     setTodos(copy);
   }
 
+  function editNote(id, value) {
+    setTodos([
+      ...todos.map(todo => {
+        if (todo.id === id) {
+          todo.name = value;
+
+          return todo;
+        }
+
+        return todo;
+      }),
+    ]);
+  }
+
   const [todos, setTodos] = useState(obj);
 
   const notes = todos.map((todo, index) => (
@@ -42,6 +56,7 @@ function Main() {
       name={todo.name}
       isFinish={todo.isFinish}
       deleteNote={deleteNote}
+      editNote={editNote}
     />
   ));
 

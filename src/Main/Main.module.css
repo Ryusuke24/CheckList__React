@@ -1,9 +1,8 @@
 .main {
-  min-height: 150px;
   margin: 20px 10px 0 10px;
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
+  flex: 1 0 auto;
+  justify-content: flex-start;
   align-items: center;
-  border: 2px solid grey;
 }

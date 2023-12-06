@@ -1,4 +1,11 @@
 * {
   font-family: "Rubik", sans-serif;
+
   /* border: 1px solid black; */
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }

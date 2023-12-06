@@ -1,0 +1,29 @@
+@media (min-width: 768px) {
+  .contacts {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 0 10px;
+  }
+}
+
+svg[id="GitHubLogo"]:hover path {
+  fill: whitesmoke;
+  stroke: whitesmoke;
+}
+
+svg[id="GitHubLogo"] path {
+  fill: grey;
+  stroke: grey;
+}

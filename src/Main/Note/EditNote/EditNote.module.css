@@ -1,0 +1,45 @@
+@media (min-width: 768px) {
+  .note {
+    display: flex;
+    width: 85%;
+    gap: 10px;
+    margin: 10px 5px 5px 5px;
+    padding: 5px;
+    justify-content: flex-end;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  .noteSubmitBtn {
+    height: 20px;
+    align-self: center;
+  }
+
+  .noteInput {
+    flex: auto;
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .note {
+    display: flex;
+    width: 85%;
+    gap: 10px;
+    margin: 10px 5px 5px 5px;
+    padding: 5px;
+    justify-content: flex-end;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  .noteSubmitBtn {
+    height: 20px;
+    align-self: center;
+  }
+
+  .noteInput {
+    flex: auto;
+    align-self: center;
+  }
+}

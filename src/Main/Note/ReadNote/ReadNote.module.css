@@ -1,0 +1,71 @@
+@media (min-width: 768px) {
+  .note {
+    display: flex;
+    width: 85%;
+    gap: 10px;
+    margin: 10px 5px 5px 5px;
+    padding: 0 5px 0 5px;
+    justify-content: flex-end;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  .noteName,
+  .lineThroughNoteName {
+    flex: 1;
+  }
+
+  .lineThroughNoteName {
+    text-decoration: line-through;
+  }
+
+  .noteDeleteBtn {
+    align-self: center;
+    height: 30px;
+  }
+
+  .noteDoneBtn {
+    height: 30px;
+    align-self: center;
+  }
+
+  .noteInput {
+    flex: auto;
+    align-self: center;
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .note {
+    display: flex;
+    width: 85%;
+    gap: 10px;
+    margin: 10px 5px 5px 5px;
+    padding: 0 5px 0 5px;
+    justify-content: flex-end;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  .noteName,
+  .lineThroughNoteName {
+    font-size: large;
+    flex: 1;
+    align-self: flex-start;
+  }
+
+  .lineThroughNoteName {
+    text-decoration: line-through;
+  }
+
+  .noteDeleteBtn {
+    align-self: center;
+    height: 30px;
+  }
+
+  .noteDoneBtn {
+    height: 30px;
+    align-self: center;
+  }
+}

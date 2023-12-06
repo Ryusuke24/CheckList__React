@@ -7,8 +7,8 @@ function CreationNote({ addNote }) {
   return (
     <>
       <div className={style.creationNote}>
-        <label>
-          Add name of note:
+        <label className={style.creationNoteLabel}>
+          <span>Add name of note:</span>
           <input
             className={style.creationNoteInput}
             defaultValue={value}
