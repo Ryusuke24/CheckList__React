@@ -11,8 +11,18 @@
   }
 
   .noteSubmitBtn {
-    height: 20px;
+    height: 30px;
     align-self: center;
+    background-color: green;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .noteSubmitBtn:hover {
+    background-color: rgb(0, 160, 0);
   }
 
   .noteInput {
@@ -33,13 +43,24 @@
     border-radius: 10px;
   }
 
-  .noteSubmitBtn {
-    height: 20px;
-    align-self: center;
-  }
-
   .noteInput {
     flex: auto;
     align-self: center;
+  }
+
+  .noteSubmitBtn {
+    height: 30px;
+    align-self: center;
+    background-color: green;
+
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .noteSubmitBtn:hover {
+    background-color: rgb(0, 160, 0);
   }
 }

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { nanoid } from "nanoid";
 import Note from "./Note/Note";
-import style from "./Main.module.css";
 import CreationNote from "./CreationNote/CreationNote";
+import style from "./Main.module.css";
 
 const obj = [
   {
@@ -19,7 +19,15 @@ const obj = [
 
 function Main() {
   function deleteNote(index) {
-    setTodos([...todos.slice(0, index), ...todos.slice(index + 1)]);
+    let copy = [...todos];
+    if (copy.length > 1) {
+      setTodos([...todos.slice(0, index), ...todos.slice(index + 1)]);
+      console.log(copy);
+      localStorage.setItem("todos", JSON.stringify(copy));
+    } else {
+      setTodos([]);
+      localStorage.clear();
+    }
   }
 
   function addNote(value) {
@@ -30,6 +38,7 @@ function Main() {
     copy[length]["name"] = value;
     copy[length]["isFinish"] = false;
     setTodos(copy);
+    localStorage.setItem("todos", JSON.stringify(copy));
   }
 
   function editNote(id, value) {
@@ -44,10 +53,13 @@ function Main() {
         return todo;
       }),
     ]);
+    let copy = [...todos];
+    localStorage.setItem("todos", JSON.stringify(copy));
   }
 
-  const [todos, setTodos] = useState(obj);
-
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem("todos")) || obj
+  );
   const notes = todos.map((todo, index) => (
     <Note
       key={todo.id}
@@ -62,7 +74,7 @@ function Main() {
 
   return (
     <main className={style.main}>
-      <CreationNote addNote={addNote} />
+      <CreationNote key={nanoid()} addNote={addNote} />
       {notes}
     </main>
   );

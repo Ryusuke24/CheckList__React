@@ -20,13 +20,18 @@
   }
 
   .noteDeleteBtn {
-    align-self: center;
     height: 30px;
+    align-self: center;
+    background-color: #db2d16;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .noteDoneBtn {
-    height: 30px;
-    align-self: center;
+  .noteDeleteBtn:hover {
+    background-color: #f53218;
   }
 
   .noteInput {
@@ -60,12 +65,17 @@
   }
 
   .noteDeleteBtn {
-    align-self: center;
     height: 30px;
+    align-self: center;
+    background-color: #db2d16;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .noteDoneBtn {
-    height: 30px;
-    align-self: center;
+  .noteDeleteBtn:hover {
+    background-color: #f53218;
   }
 }
