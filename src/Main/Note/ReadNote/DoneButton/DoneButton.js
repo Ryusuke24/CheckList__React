@@ -1,9 +1,15 @@
 import React from "react";
 import style from "./DoneButton.module.css";
 
-function DoneButton({ setDone, isDone }) {
+function DoneButton({ setDone, isDone, id, saveStateNote }) {
   return (
-    <button className={style.noteDoneBtn} onClick={() => setDone(!isDone)}>
+    <button
+      className={style.noteDoneBtn}
+      onClick={() => {
+        saveStateNote(id);
+        setDone(!isDone);
+      }}
+    >
       {" "}
       <svg
         width="24px"

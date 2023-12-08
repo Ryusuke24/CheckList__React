@@ -1,9 +1,15 @@
 import React from "react";
 import style from "./NotReadyButton.module.css";
 
-function NoteReadyButton({ setDone, isDone }) {
+function NoteReadyButton({ setDone, isDone, id, saveStateNote }) {
   return (
-    <button className={style.noteDoneBtn} onClick={() => setDone(!isDone)}>
+    <button
+      className={style.noteDoneBtn}
+      onClick={() => {
+        saveStateNote(id);
+        setDone(!isDone);
+      }}
+    >
       {" "}
       <svg
         width="24px"
@@ -12,7 +18,7 @@ function NoteReadyButton({ setDone, isDone }) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
           id="SVGRepo_tracerCarrier"
           strokeLinecap="round"

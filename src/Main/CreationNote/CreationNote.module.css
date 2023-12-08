@@ -2,12 +2,10 @@
   .creationNote {
     background-color: black;
     color: whitesmoke;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 8px;
     padding: 10px;
-    position: sticky;
-    top: 25px;
-    margin: 10px;
+    margin: 10px 0 10px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,12 +48,10 @@
   .creationNote {
     background-color: black;
     color: whitesmoke;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 8px;
     padding: 10px;
-    position: sticky;
-    top: 100px;
-    margin: 10px;
+    margin: 10px 0 10px 10px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import Note from "./Note/Note";
 import CreationNote from "./CreationNote/CreationNote";
 import style from "./Main.module.css";
+import Calendar from "./Calendar/Calendar";
 
 const obj = [
   {
@@ -17,13 +18,17 @@ const obj = [
   },
 ];
 
+const date = new Date();
+const now = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+let currentTime = now.getTime();
+
 function Main() {
   function deleteNote(index) {
     let copy = [...todos];
     if (copy.length > 1) {
       setTodos([...todos.slice(0, index), ...todos.slice(index + 1)]);
       console.log(copy);
-      localStorage.setItem("todos", JSON.stringify(copy));
+      localStorage.setItem(currentTime, JSON.stringify(copy));
     } else {
       setTodos([]);
       localStorage.clear();
@@ -38,7 +43,7 @@ function Main() {
     copy[length]["name"] = value;
     copy[length]["isFinish"] = false;
     setTodos(copy);
-    localStorage.setItem("todos", JSON.stringify(copy));
+    localStorage.setItem(currentTime, JSON.stringify(copy));
   }
 
   function editNote(id, value) {
@@ -54,11 +59,32 @@ function Main() {
       }),
     ]);
     let copy = [...todos];
-    localStorage.setItem("todos", JSON.stringify(copy));
+    localStorage.setItem(currentTime, JSON.stringify(copy));
+  }
+
+  function saveStateNote(id) {
+    setTodos([
+      ...todos.map(todo => {
+        if (todo.id === id) {
+          todo.isFinish = !todo.isFinish;
+
+          return todo;
+        }
+
+        return todo;
+      }),
+    ]);
+    let copy = [...todos];
+    localStorage.setItem(currentTime, JSON.stringify(copy));
+  }
+
+  function getNoteAtChosenDay(time) {
+    currentTime = time;
+    setTodos(JSON.parse(localStorage.getItem(currentTime)) || obj);
   }
 
   const [todos, setTodos] = useState(
-    JSON.parse(localStorage.getItem("todos")) || obj
+    JSON.parse(localStorage.getItem(currentTime)) || obj
   );
   const notes = todos.map((todo, index) => (
     <Note
@@ -69,12 +95,17 @@ function Main() {
       isFinish={todo.isFinish}
       deleteNote={deleteNote}
       editNote={editNote}
+      saveStateNote={saveStateNote}
     />
   ));
 
   return (
     <main className={style.main}>
-      <CreationNote key={nanoid()} addNote={addNote} />
+      <div className={style.actionModule}>
+        <CreationNote key={nanoid()} addNote={addNote} />
+        <Calendar getNoteAtChosenDay={getNoteAtChosenDay} />
+      </div>
+
       {notes}
     </main>
   );

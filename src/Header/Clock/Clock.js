@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./Clock.module.css";
 
 const date = new Date();
@@ -40,7 +40,16 @@ function Clock() {
   }
 
   const [time, setTime] = useState(currentDate);
-  setInterval(updateTime, 1000);
+
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      updateTime();
+      console.info(seconds);
+    }, 1000);
+    return () => {
+      clearInterval(intervalID);
+    };
+  });
 
   return time;
 }

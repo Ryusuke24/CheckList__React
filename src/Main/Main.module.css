@@ -6,3 +6,11 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+.actionModule {
+  display: flex;
+  gap: 10px;
+  position: sticky;
+  top: 25px;
+  justify-content: center;
+}

@@ -1,9 +1,18 @@
 import React, { useState } from "react";
 import DoneButton from "./DoneButton/DoneButton";
-import NoteReadyButton from "./NotReadyButton/NotReadyButton";
+import NotReadyButton from "./NotReadyButton/NotReadyButton";
 import style from "./ReadNote.module.css";
 
-function ReadNote({ index, id, name, isFinish, deleteNote, isEdit, setEdit }) {
+function ReadNote({
+  index,
+  id,
+  name,
+  isFinish,
+  deleteNote,
+  isEdit,
+  setEdit,
+  saveStateNote,
+}) {
   const [isDone, setDone] = useState(isFinish);
 
   return (
@@ -15,9 +24,19 @@ function ReadNote({ index, id, name, isFinish, deleteNote, isEdit, setEdit }) {
         {name}
       </h2>
       {isDone ? (
-        <NoteReadyButton setDone={setDone} isDone={isDone} />
+        <NotReadyButton
+          setDone={setDone}
+          isDone={isDone}
+          id={id}
+          saveStateNote={saveStateNote}
+        />
       ) : (
-        <DoneButton setDone={setDone} isDone={isDone} />
+        <DoneButton
+          setDone={setDone}
+          isDone={isDone}
+          id={id}
+          saveStateNote={saveStateNote}
+        />
       )}
       <button
         className={style.noteDeleteBtn}

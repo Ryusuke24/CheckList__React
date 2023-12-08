@@ -3,7 +3,15 @@ import style from "./Note.module.css";
 import EditNote from "./EditNote/EditNote";
 import ReadNote from "./ReadNote/ReadNote";
 
-function Note({ index, id, name, isFinish, deleteNote, editNote }) {
+function Note({
+  index,
+  id,
+  name,
+  isFinish,
+  deleteNote,
+  editNote,
+  saveStateNote,
+}) {
   const [isEdit, setEdit] = useState(false);
 
   return (
@@ -26,6 +34,7 @@ function Note({ index, id, name, isFinish, deleteNote, editNote }) {
           editNote={editNote}
           isEdit={isEdit}
           setEdit={setEdit}
+          saveStateNote={saveStateNote}
         />
       )}
     </>
