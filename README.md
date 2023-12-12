@@ -10,6 +10,10 @@
 - Choose day which you need to make a note
 - Use calendar
 
+## Save tasks and add tasks at another day
+
+![alt text](./imageForMd/4.gif)
+
 ## Deleting/Add the tasks
 
 ![alt text](./imageForMd/1.gif)
@@ -22,6 +26,4 @@
 
 ![alt text](./imageForMd/3.gif)
 
-## Save tasks and add tasks at another day
 
-![alt text](./imageForMd/4.gif)
